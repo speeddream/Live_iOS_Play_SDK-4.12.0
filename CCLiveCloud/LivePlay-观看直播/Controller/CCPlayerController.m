@@ -294,11 +294,7 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
 @property (nonatomic, copy)   NSString *errorTip;
 
 @property (nonatomic, assign) BOOL statusBarSwitch;
-
-/// 4.11.0 new
-//@property (nonatomic, strong) HDSPanoramicVideoCreator *creator;
-//@property (nonatomic, assign) BOOL                      isVRRoom;
-//@property (nonatomic, assign) BOOL                      isVRGyroMode;
+ 
 @property (nonatomic, strong) HDSPublicTipsView         *publicTipsView;
 /// 不是首次查询
 @property (nonatomic, assign) BOOL                      nonFirstQuery;
@@ -485,9 +481,6 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
     } player:^(UIView * _Nonnull playerView) {
         playerView.frame = self.hds_playerContentView.bounds; // 注意视频大小尺寸
         [self.hds_playerContentView addSubview:playerView];
-//        if (_isVRRoom) {
-//            [self createVRLibrary:playerView];
-//        }
         if (_hds_playerView) {
             [_hds_playerView removeFromSuperview];
             _hds_playerView = nil;

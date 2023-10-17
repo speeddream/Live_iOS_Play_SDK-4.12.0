@@ -26,11 +26,6 @@ typedef void (^cleanVoteAndTestBlock)(NSInteger type);//收起随堂测/答题�
 
 typedef void (^hds_actionClosure)(HDSMultiBoardViewActionModel *model);
 
-// 4.11.0 new VR眼镜模式开关回调
-typedef void (^hds_vrGlassesModelClosure)(BOOL result);
-// 4.11.0 new VR陀螺仪开关回调
-typedef void (^hds_vrGyroClosure)(BOOL result);
-
 @protocol CCPlayerViewDelegate <NSObject>
 /**
  点击全屏按钮代理

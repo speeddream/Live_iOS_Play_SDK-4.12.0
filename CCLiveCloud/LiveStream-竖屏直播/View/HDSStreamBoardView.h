@@ -16,7 +16,6 @@ typedef void(^sendChatMessage)(NSString *msg);
 typedef void(^muteStreamVoice)(BOOL result);
 typedef void(^changeLineBlock)(NSInteger index);
 typedef void(^changeQualityBlock)(NSString *quality);
-typedef void(^changeVRGyroBlock)(BOOL result);
 
 @interface HDSStreamBoardView : UIView
 

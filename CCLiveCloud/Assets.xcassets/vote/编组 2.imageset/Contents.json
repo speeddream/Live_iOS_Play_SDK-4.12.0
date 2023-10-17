@@ -1,22 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "编组 2.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "bottom" : 69,
-          "left" : 180,
-          "right" : 63,
-          "top" : 69
-        },
-        "center" : {
-          "height" : 1,
-          "mode" : "tile",
-          "width" : 1
-        },
-        "mode" : "9-part"
-      },
       "scale" : "1x"
     },
     {

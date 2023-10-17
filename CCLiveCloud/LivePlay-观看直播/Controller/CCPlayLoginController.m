@@ -82,10 +82,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-//    self.textFieldUserId.text = @"5BD067B602DE357D";
-//    self.textFieldRoomId.text = @"A14C8119CDEF3FF79C33DC5901307461";
-//    self.textFieldUserPassword.text = @"1195741772220379136";
-//    self.textFieldUserName.text = @"xkw_317427709";
+    self.textFieldUserId.text = @"5BD067B602DE357D";
+    self.textFieldRoomId.text = @"E9A79C490A2CCE449C33DC5901307461";
+    self.textFieldUserPassword.text = @"1197193037253349376";
+    self.textFieldUserName.text = @"xkw_317427709";
 }
 
 #pragma mark- 点击登录

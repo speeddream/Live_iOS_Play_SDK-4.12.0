@@ -39,8 +39,6 @@
 @property (nonatomic,strong) NSString * quality;
 //清晰度描述
 @property (nonatomic,strong) NSString * desp;
-//VR视频
-@property (nonatomic,assign) BOOL vrMode;
 // 下载时间
 @property (nonatomic, strong) NSDate *downloadDate;
 // 断点续传需要设置这个数据
@@ -234,7 +232,6 @@
     downloadModel.mediaType = mediaType ? [NSString stringWithFormat:@"%@",mediaType] : @"1";
     downloadModel.quality = quality ? [NSString stringWithFormat:@"%@",quality] : nil;
     downloadModel.desp = desp ? [desp copy] : nil;
-    downloadModel.vrMode = vrMode;
     downloadModel.othersInfo = othersInfo;
     //生成文件存储路径
     NSString *type;

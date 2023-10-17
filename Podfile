@@ -34,10 +34,6 @@ pod 'HDSInvitationCardModule',  '4.9.0'
 pod 'HDSQuestionnaireModule',  '4.9.0'
 pod 'HDSLiveStoreModule',  '4.9.0'
 
-# VR
-#pod 'HDSPanoramicvideoFramework', '~> 1.0.1'
-#pod 'HDSVRMediaFramework'
-
 pod 'LookinServer', :configurations => ['Debug']
 end
 

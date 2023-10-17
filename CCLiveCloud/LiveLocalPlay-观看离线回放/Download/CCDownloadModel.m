@@ -43,8 +43,6 @@
 @property (nonatomic,strong) NSString * quality;
 //清晰度描述
 @property (nonatomic,strong) NSString * desp;
-//VR视频
-@property (nonatomic,assign) BOOL vrMode;
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>  task info
 // 下载状态
@@ -100,7 +98,6 @@
         self.mimeType = [aDecoder decodeObjectForKey:@"mimeType"];
         self.quality = [aDecoder decodeObjectForKey:@"quality"];
         self.desp = [aDecoder decodeObjectForKey:@"desp"];
-        self.vrMode = [aDecoder decodeBoolForKey:@"vrMode"];
         self.resumeData = [aDecoder decodeObjectForKey:@"resumeData"];
         self.othersInfo = [aDecoder decodeObjectForKey:@"othersInfo"];
         self.userId = [aDecoder decodeObjectForKey:@"userId"];
@@ -123,7 +120,6 @@
     [aCoder encodeObject:self.mimeType forKey:@"mimeType"];
     [aCoder encodeObject:self.quality forKey:@"quality"];
     [aCoder encodeObject:self.desp forKey:@"desp"];
-    [aCoder encodeBool:self.vrMode forKey:@"vrMode"];
     [aCoder encodeObject:self.resumeData forKey:@"resumeData"];
     [aCoder encodeObject:self.othersInfo forKey:@"othersInfo"];
     [aCoder encodeObject:self.userId forKey:@"userId"];

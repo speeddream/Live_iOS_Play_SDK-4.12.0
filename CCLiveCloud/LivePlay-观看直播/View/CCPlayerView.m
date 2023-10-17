@@ -1641,12 +1641,6 @@
  *    @brief    点击全屏按钮
  */
 -(void)quanpingBtnClick{
-    
-//    if (_isVRGyroMode == YES && _isVRRoom == YES) {
-//        [self showTipInfosWithTitle:@"陀螺仪已开启，不支持切换屏幕"];
-//        return;
-//    }
-    
     //全屏按钮代理
     _screenLandScape = YES;
     [self.delegate quanpingButtonClick:_changeButton.tag];

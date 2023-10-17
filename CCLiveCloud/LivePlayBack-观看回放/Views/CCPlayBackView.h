@@ -14,11 +14,6 @@
 #import "CCSDK/PlayParameter.h"
 NS_ASSUME_NONNULL_BEGIN
 
-// 4.11.0 new VR眼镜模式开关回调
-typedef void (^hds_vrGlassesModelClosure)(BOOL result);
-// 4.11.0 new VR陀螺仪开关回调
-typedef void (^hds_vrGyroClosure)(BOOL result);
-
 @protocol CCPlayBackViewDelegate <NSObject>
 
 /**

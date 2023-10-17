@@ -238,20 +238,8 @@
         
         NSIndexPath *indexPa = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
         [_collectionView reloadItemsAtIndexPaths:@[indexPa]];
-    } else if ([oneModel.itemName isEqualToString:@"陀螺仪开启"] || [oneModel.itemName isEqualToString:@"陀螺仪关闭"]) {
-        HDSMoreToolItemModel *oneModel = self.buttonInfos[indexPath.row];
-        if ([oneModel.itemName isEqualToString:@"陀螺仪开启"]) {
-            oneModel.itemName = @"陀螺仪关闭";
-            oneModel.imageName = @"vr陀螺仪关闭";
-        } else if ([oneModel.itemName isEqualToString:@"陀螺仪关闭"]) {
-            oneModel.itemName = @"陀螺仪开启";
-            oneModel.imageName = @"vr陀螺仪开启";
-        }
-        [self.buttonInfos replaceObjectAtIndex:indexPath.row withObject:oneModel];
-        
-        NSIndexPath *indexPa = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
-        [_collectionView reloadItemsAtIndexPaths:@[indexPa]];
     }
+    
     if (_callBack) {
         _callBack(oneModel.itemName);
     }

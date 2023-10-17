@@ -48,8 +48,7 @@ typedef void (^DWDownloadStateBlock)(CCDownloadModel *downloadModel, NSError *er
 @property (nonatomic, strong, readonly) NSString * quality;
 /// 清晰度描述
 @property (nonatomic, strong, readonly) NSString * desp;
-/// VR视频
-@property (nonatomic, assign, readonly) BOOL vrMode;
+
 /// 非点播业务不需要关注此值  解压状态 0 未解压  1 解压中 2 解压完成 3 解压失败
 @property (nonatomic, assign) NSInteger decompressionState;
 //@property (nonatomic, strong) dispatch_queue_t decompressionQueue;
