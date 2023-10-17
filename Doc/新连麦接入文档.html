@@ -1,0 +1,681 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit; background-repeat: inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>新连麦接入文档</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='多人连麦接入文档'><span>多人连麦接入文档</span></h2><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n0"><a class="md-toc-inner" href="#多人连麦接入文档">多人连麦接入文档</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n3"><a class="md-toc-inner" href="#接入基本信息">接入基本信息</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n18"><a class="md-toc-inner" href="#新增依赖库">新增依赖库</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n63"><a class="md-toc-inner" href="#新增基础-api">新增基础 API</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n64"><a class="md-toc-inner" href="#初始化sdk主动）">初始化SDK（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n91"><a class="md-toc-inner" href="#错误回调代理）">错误回调（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n102"><a class="md-toc-inner" href="#房间连麦信息">房间连麦信息</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n104"><a class="md-toc-inner" href="#房间连麦状态代理）">房间连麦状态（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n114"><a class="md-toc-inner" href="#hdsroomcallinfo">HDSRoomCallInfo</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n133"><a class="md-toc-inner" href="#连麦模式切换多人连麦）代理）">连麦模式切换（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n144"><a class="md-toc-inner" href="#主动发起上麦操作">主动发起上麦操作</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n145"><a class="md-toc-inner" href="#主动申请上麦主动）">主动申请上麦（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n177"><a class="md-toc-inner" href="#主动挂断下课也需要调用）主动）">主动挂断（下课也需要调用）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n195"><a class="md-toc-inner" href="#被挂断多人连麦）代理）">被挂断（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n206"><a class="md-toc-inner" href="#被邀请上麦操作">被邀请上麦操作</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n207"><a class="md-toc-inner" href="#被邀请上麦多人连麦）代理）">被邀请上麦（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n218"><a class="md-toc-inner" href="#同意邀请多人连麦）主动）">同意邀请（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n239"><a class="md-toc-inner" href="#邀请被取消多人连麦）代理）">邀请被取消（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n250"><a class="md-toc-inner" href="#拒绝邀请多人连麦）主动）">拒绝邀请（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n261"><a class="md-toc-inner" href="#远端流相关操作">远端流相关操作</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n263"><a class="md-toc-inner" href="#远端流可用代理）">远端流可用（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n273"><a class="md-toc-inner" href="#hdsstreammodel-1">HDSStreamModel</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n284"><a class="md-toc-inner" href="#hdsstreamuserinfomodel-1">HDSStreamUserInfoModel</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n305"><a class="md-toc-inner" href="#拉远端流主动）">拉远端流（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n328"><a class="md-toc-inner" href="#hdsstreammodel-2">HDSStreamModel</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n339"><a class="md-toc-inner" href="#hdsstreamuserinfomodel-2">HDSStreamUserInfoModel</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n360"><a class="md-toc-inner" href="#远端流不可用多人连麦）代理）">远端流不可用（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n377"><a class="md-toc-inner" href="#hdsstreammodel-3">HDSStreamModel</a></span><span role="listitem" class="md-toc-item md-toc-h5" data-ref="n388"><a class="md-toc-inner" href="#hdsstreamuserinfomodel-3">HDSStreamUserInfoModel</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n409"><a class="md-toc-inner" href="#移除远端流多人连麦）主动）">移除远端流（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n427"><a class="md-toc-inner" href="#连麦中相关操作">连麦中相关操作</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n428"><a class="md-toc-inner" href="#设置本地视频开启-开始直播之后生效多人连麦）主动）">设置本地视频开启 (开始直播之后生效)（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n446"><a class="md-toc-inner" href="#视频状态改变多人连麦）代理）">视频状态改变（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n468"><a class="md-toc-inner" href="#设置本地音频开启开始直播之后生效多人连麦）主动）">设置本地音频开启(开始直播之后生效)（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n486"><a class="md-toc-inner" href="#音频状态改变多人连麦）代理）">音频状态改变（多人连麦）（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n511"><a class="md-toc-inner" href="#切换本地摄像头默认前置多人连麦）主动）">切换本地摄像头，默认前置（多人连麦）（主动）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n522"><a class="md-toc-inner" href="#连麦异常代理）">连麦异常（代理）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n555"><a class="md-toc-inner" href="#特别注意多人连麦需要退出房间重新登陆的事件">特别注意多人连麦需要退出房间重新登陆的事件</a></span></p></div><h3 id='接入基本信息'><span>接入基本信息</span></h3><figure><table><thead><tr><th><span>基本信息</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>支持版本</span></td><td><span>3.18.0及后续版本</span></td></tr><tr><td><span>接入方式</span></td><td><span>本地、Cocoapods集成</span></td></tr><tr><td><span>支持版本</span></td><td><span>iOS10及以上</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='新增依赖库'><span>新增依赖库</span></h3><figure><table><thead><tr><th><span>新增依赖库</span></th><th><span>类型</span></th></tr></thead><tbody><tr><td><span>alivcffmpeg.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>AliyunPlayer.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>artcSource.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>artpSource.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>CCBarleyLibrary.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>CCClassRoomBasic.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>CCFuncTool.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>CCIMLib.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>CCStreamLib.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>MQTTClient.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>RtsSDK.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>ZegoLiveRoom.framework</span></td><td><span>动态库</span></td></tr><tr><td><span>libbz2.tbd</span></td><td><span>系统动态库</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='新增基础-api'><span>新增基础 API</span></h3><h4 id='初始化sdk主动）'><span>初始化SDK（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(id)initSDKWithParameter: succed: player: failed:</span></td><td><span>初始化SDK</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 初始化SDK</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param parameter 参数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param succed 初始化成功回调</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param player 播放视图回调 （流视图异步回调，存在回调多次；无延迟直播无需关注。）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param failed 初始化失败回调</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-keyword">id</span>)<span class="cm-variable">initSDKWithParameter</span>:(<span class="cm-variable">PlayParameter</span> <span class="cm-operator">*</span>)<span class="cm-variable">parameter</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">succed</span>:(<span class="cm-variable">initSuccedClosure</span>)<span class="cm-variable">succed</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">player</span>:(<span class="cm-variable">HDSPlayerViewClosure</span>)<span class="cm-variable">player</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">failed</span>:(<span class="cm-variable">initFailedClosure</span>)<span class="cm-variable">failed</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 198px;"></div><div class="CodeMirror-gutters" style="display: none; height: 198px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>parameter</span></td><td><span>初始化SDK参数，其中 &quot;playerParent&quot;,&quot;playerFrame&quot; 已废弃，新的流视图由 HDSPlayerViewClosure 异步回调，自行处理</span></td></tr><tr><td><span>succed</span></td><td><span>初始化SDK成功回调</span></td></tr><tr><td><span>player</span></td><td><span>流视图异步回调，存在回调多次；无延迟直播无需关注。</span></td></tr><tr><td><span>failed</span></td><td><span>初始化SDK失败回调</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='错误回调代理）'><span>错误回调（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onError:</span></td><td><span>错误回调</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 3.18.0 new 错误回调</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param model 错误信息</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onError</span>:(<span class="cm-variable">HDSOnErrorModel</span> <span class="cm-operator">*</span>)<span class="cm-variable">model</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">@interface</span> <span class="cm-variable">HDSOnErrorModel</span> : <span class="cm-variable">NSObject</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">@property</span> (<span class="cm-keyword">nonatomic</span>, <span class="cm-variable">assign</span>) <span class="cm-variable">OnErrorType</span> <span class="cm-variable">type</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">@property</span> (<span class="cm-keyword">nonatomic</span>, <span class="cm-keyword">copy</span>) &nbsp; <span class="cm-variable">NSString</span> &nbsp; &nbsp;<span class="cm-operator">*</span> <span class="cm-variable">_Nullable</span> <span class="cm-variable">message</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">@end</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">typedef</span> <span class="cm-variable">NS_ENUM</span>(<span class="cm-variable">NSInteger</span>, <span class="cm-variable">OnErrorType</span>) {</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">OnErrorType_LoginFailed</span> <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-operator">=</span> <span class="cm-number">2001001001</span>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 登陆失败</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">OnErrorType_GetPlaySourceFailed</span> <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-operator">=</span> <span class="cm-number">2001001002</span>, &nbsp; <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">// 获取播放源失败</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">OnErrorType_GetSummaryFailed</span> <span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-operator">=</span> <span class="cm-number">2001001003</span>, &nbsp; &nbsp;  <span class="cm-tab" role="presentation" cm-text="	"> </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-comment">// 获取摘要失败</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 308px;"></div><div class="CodeMirror-gutters" style="display: none; height: 308px;"></div></div></div></pre><p>&nbsp;</p><h3 id='房间连麦信息'><span>房间连麦信息</span></h3><p>&nbsp;</p><h4 id='房间连麦状态代理）'><span>房间连麦状态（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>onMediaCallStatusDidChange:</span></td><td><span>房间是否允许连麦</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 房间是否允许连麦</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param callInfo 房间信息</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onMediaCallStatusDidChange</span>:(<span class="cm-variable">HDSRoomCallInfo</span> <span class="cm-operator">*</span>)<span class="cm-variable">callInfo</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><h5 id='hdsroomcallinfo'><span>HDSRoomCallInfo</span></h5><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>isMultiMediaCallRoom</span></td><td><span>是否是多人连麦房间（ YES 多人连麦 / NO 单人连麦 ）</span></td></tr><tr><td><span>isMediaCallFuncEnable</span></td><td><span>是否开启连麦功能 （ YES 房间连麦功能开启 / NO 房间连麦功能未开启 ）</span></td></tr><tr><td><span>disableReason</span></td><td><span>房间连麦功能未开启原因</span></td></tr><tr><td><span>roomCallType</span></td><td><span>连麦类型 ( HDSRoomCallType )</span></td></tr></tbody></table></figure><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">typedef</span> <span class="cm-variable">NS_ENUM</span>(<span class="cm-variable">NSInteger</span>, <span class="cm-variable">HDSRoomCallType</span>) {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">HDSRoomCallTypeAudio</span>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">/// 音频连麦房间 （多人连麦情况下只能申请音频连麦）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">HDSRoomCallTypeAudioVideo</span>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">/// 视频连麦房间 （单人连麦可申请音频或视频连麦）</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><p>&nbsp;</p><h4 id='连麦模式切换多人连麦）代理）'><span>连麦模式切换（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onMediaCallModeDidChange:</span></td><td><span>连麦模式切换  只有多人连麦才会触发</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 连麦模式切换  只有多人连麦才会触发</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param  mode 模式  7 无延迟 / 8 低延迟 / 9 普通</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onMediaCallModeDidChange</span>:(<span class="cm-variable-3">int</span>)<span class="cm-variable">mode</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p>&nbsp;</p><h3 id='主动发起上麦操作'><span>主动发起上麦操作</span></h3><h4 id='主动申请上麦主动）'><span>主动申请上麦（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)callInPreviewWithType: succed: failed:</span></td><td><span>主动申请上麦</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 主动申请上麦</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param type 类型</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param succedClosure 成功回调 (preview 为自己的预览视图，仅在多人连麦使用)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param failedClosure 失败回调</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">callInPreviewWithType</span>:(<span class="cm-variable">HDSMediaCallType</span>)<span class="cm-variable">type</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">succed</span>:(<span class="cm-variable-3">void</span>(<span class="cm-variable">^</span>)(<span class="cm-variable">UIView</span> <span class="cm-operator">*</span><span class="cm-variable">preview</span>))<span class="cm-variable">succedClosure</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">failed</span>:(<span class="cm-variable-3">void</span>(<span class="cm-variable">^</span>)(<span class="cm-variable">HDSMediaCallError</span> <span class="cm-variable">error</span>))<span class="cm-variable">failedClosure</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 154px;"></div><div class="CodeMirror-gutters" style="display: none; height: 154px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th>&nbsp;</th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>type</span></td><td><span>HDSMediaCallTypeAudio</span></td><td><span>音频连麦</span></td></tr><tr><td>&nbsp;</td><td><span>HDSMediaCallTypeAudioVideo</span></td><td><span>视频连麦</span></td></tr><tr><td><span>succedClosure</span></td><td><span>preview</span></td><td><span>本人的预览视图</span></td></tr><tr><td><span>failedClosure</span></td><td><span>error</span></td><td><span>连麦错误信息</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='主动挂断下课也需要调用）主动）'><span>主动挂断（下课也需要调用）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)hangup:</span></td><td><span>主动挂断</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 挂断</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param closure 回调</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 主动挂断连麦,用户主动点击下麦按钮时需要关心finishClosure的返回值，退出直播间、下课等调用hangup时不需要关心callback</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">hangup</span>:(<span class="cm-variable">hangupClosure</span>)<span class="cm-variable">closure</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 110px;"></div><div class="CodeMirror-gutters" style="display: none; height: 110px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>closure</span></td><td><span>挂断回调</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='被挂断多人连麦）代理）'><span>被挂断（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onCallWasHangup</span></td><td><span>被挂断</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 被挂断</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onCallWasHangup</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p>&nbsp;</p><h3 id='被邀请上麦操作'><span>被邀请上麦操作</span></h3><h4 id='被邀请上麦多人连麦）代理）'><span>被邀请上麦（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onInviteCall</span></td><td><span>邀请上麦</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 邀请上麦</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onInviteCall</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p>&nbsp;</p><h4 id='同意邀请多人连麦）主动）'><span>同意邀请（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)agreeCallInPreview: failed:</span></td><td><span>同意上麦</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 同意上麦</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param succedClosure 成功回调 (preview 为自己的预览视图，仅在多人连麦使用)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param failedClosure 失败回调</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">agreeCallInPreview</span>:(<span class="cm-variable-3">void</span>(<span class="cm-variable">^</span>)(<span class="cm-variable">UIView</span> <span class="cm-operator">*</span><span class="cm-variable">preview</span>))<span class="cm-variable">succedClosure</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">failed</span>:(<span class="cm-variable-3">void</span>(<span class="cm-variable">^</span>)(<span class="cm-variable">HDSMediaCallError</span> <span class="cm-variable">error</span>))<span class="cm-variable">failedClosure</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 110px;"></div><div class="CodeMirror-gutters" style="display: none; height: 110px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>succedClosure</span></td><td><span>成功回调 (preview 为自己的预览视图，仅在多人连麦使用)</span></td></tr><tr><td><span>failedClosure</span></td><td><span>失败回调</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='邀请被取消多人连麦）代理）'><span>邀请被取消（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onInviteCanceled</span></td><td><span>邀请被取消</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 邀请被取消</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onInviteCanceled</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p>&nbsp;</p><h4 id='拒绝邀请多人连麦）主动）'><span>拒绝邀请（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)rejectCall</span></td><td><span>拒接邀请</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 拒接邀请</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">rejectCall</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p>&nbsp;</p><h3 id='远端流相关操作'><span>远端流相关操作</span></h3><p>&nbsp;</p><h4 id='远端流可用代理）'><span>远端流可用（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onRemoteStreamEnable:</span></td><td><span>远端流可用</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 远端流可用</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param streamModel 流信息</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onRemoteStreamEnable</span>:(<span class="cm-variable">HDSStreamModel</span> <span class="cm-operator">*</span>)<span class="cm-variable">streamModel</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><h5 id='hdsstreammodel-1'><span>HDSStreamModel</span></h5><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>hds_remoteView</span></td><td><span>远端流视图</span></td></tr><tr><td><span>userInfo</span></td><td><span>用户信息 （HDSStreamUserInfoModel）</span></td></tr></tbody></table></figure><h5 id='hdsstreamuserinfomodel-1'><span>HDSStreamUserInfoModel</span></h5><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>userId</span></td><td><span>用户ID</span></td></tr><tr><td><span>userName</span></td><td><span>用户名</span></td></tr><tr><td><span>userRole</span></td><td><span>用户角色 （0 ：老师）</span></td></tr><tr><td><span>isAudioEnable</span></td><td><span>声音是否可用</span></td></tr><tr><td><span>isVideoEnable</span></td><td><span>视频是否可用</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='拉远端流主动）'><span>拉远端流（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)pullRemoteStream: succed: failed:</span></td><td><span>拉远端流</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 拉远端流</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param userId 用户ID</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param succedClosure 成功</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param failedClosure 失败</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">pullRemoteStream</span>:(<span class="cm-variable">NSString</span> <span class="cm-operator">*</span>)<span class="cm-variable">userId</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">succed</span>:(<span class="cm-variable">pullStreamSuccedClosure</span>)<span class="cm-variable">succedClosure</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">failed</span>:(<span class="cm-variable">pullStreamFailedClosure</span>)<span class="cm-variable">failedClosure</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 154px;"></div><div class="CodeMirror-gutters" style="display: none; height: 154px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>userId</span></td><td><span>用户ID</span></td></tr><tr><td><span>succedClosure</span></td><td><span>成功回调（HDSStreamModel）</span></td></tr><tr><td><span>failedClosure</span></td><td><span>错误回调</span></td></tr></tbody></table></figure><h5 id='hdsstreammodel-2'><span>HDSStreamModel</span></h5><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>hds_remoteView</span></td><td><span>远端流视图</span></td></tr><tr><td><span>userInfo</span></td><td><span>用户信息 （HDSStreamUserInfoModel）</span></td></tr></tbody></table></figure><h5 id='hdsstreamuserinfomodel-2'><span>HDSStreamUserInfoModel</span></h5><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>userId</span></td><td><span>用户ID</span></td></tr><tr><td><span>userName</span></td><td><span>用户名</span></td></tr><tr><td><span>userRole</span></td><td><span>用户角色 （0 ：老师）</span></td></tr><tr><td><span>isAudioEnable</span></td><td><span>声音是否可用</span></td></tr><tr><td><span>isVideoEnable</span></td><td><span>视频是否可用</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='远端流不可用多人连麦）代理）'><span>远端流不可用（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onRemoteStreamDisable:</span></td><td><span>远端流不可用</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 远端流不可用</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param streamModel 流信息</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onRemoteStreamDisable</span>:(<span class="cm-variable">HDSStreamModel</span> <span class="cm-operator">*</span>)<span class="cm-variable">streamModel</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>streamModel</span></td><td><span>流信息</span></td></tr></tbody></table></figure><h5 id='hdsstreammodel-3'><span>HDSStreamModel</span></h5><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>hds_remoteView</span></td><td><span>远端流视图</span></td></tr><tr><td><span>userInfo</span></td><td><span>用户信息 （HDSStreamUserInfoModel）</span></td></tr></tbody></table></figure><h5 id='hdsstreamuserinfomodel-3'><span>HDSStreamUserInfoModel</span></h5><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>userId</span></td><td><span>用户ID</span></td></tr><tr><td><span>userName</span></td><td><span>用户名</span></td></tr><tr><td><span>userRole</span></td><td><span>用户角色 （0 ：老师）</span></td></tr><tr><td><span>isAudioEnable</span></td><td><span>声音是否可用</span></td></tr><tr><td><span>isVideoEnable</span></td><td><span>视频是否可用</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='移除远端流多人连麦）主动）'><span>移除远端流（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)removeRemoteStream:</span></td><td><span>移除远端流</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 移除远端流</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param userId 远端流用户id</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">removeRemoteStream</span>:(<span class="cm-variable">NSString</span> <span class="cm-operator">*</span>)<span class="cm-variable">userId</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>userId</span></td><td><span>远端流不可用的用户ID</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='连麦中相关操作'><span>连麦中相关操作</span></h3><h4 id='设置本地视频开启-开始直播之后生效多人连麦）主动）'><span>设置本地视频开启 (开始直播之后生效)（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(BOOL)setLocalVideoEnable:</span></td><td><span>设置本地视频开启 (开始直播之后生效)</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 设置本地视频开启 (开始直播之后生效)</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param enable 是否开启 YES 开启/ NO 关闭</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @return  是否操作成功</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-keyword">BOOL</span>)<span class="cm-variable">setLocalVideoEnable</span>:(<span class="cm-keyword">BOOL</span>)<span class="cm-variable">enable</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>enable</span></td><td><span>是否开启 YES 开启/ NO 关闭</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='视频状态改变多人连麦）代理）'><span>视频状态改变（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onVideoStatusDidChange: userId:</span></td><td><span>视频状态改变</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 视频状态改变</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param status 是否可用</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param userId 用户id</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onVideoStatusDidChange</span>:(<span class="cm-keyword">BOOL</span>)<span class="cm-variable">status</span> <span class="cm-variable">userId</span>:(<span class="cm-variable">NSString</span> <span class="cm-operator">*</span>)<span class="cm-variable">userId</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>status</span></td><td><span>是否可用</span></td></tr><tr><td><span>userId</span></td><td><span>用户id</span></td></tr></tbody></table></figure><p><font color = '#ff2200'><strong><span>注：自己主动操作本地视频状态也会回调此代理</span></strong></font></p><p>&nbsp;</p><h4 id='设置本地音频开启开始直播之后生效多人连麦）主动）'><span>设置本地音频开启(开始直播之后生效)（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(BOOL)setLocalAudioEnable:</span></td><td><span>设置本地音频开启(开始直播之后生效)</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 设置本地音频开启(开始直播之后生效)</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param enable 是否开启 YES 开启/ NO 关闭</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @return  是否操作成功</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-keyword">BOOL</span>)<span class="cm-variable">setLocalAudioEnable</span>:(<span class="cm-keyword">BOOL</span>)<span class="cm-variable">enable</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 88px;"></div><div class="CodeMirror-gutters" style="display: none; height: 88px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>enable</span></td><td><span>是否开启 YES 开启/ NO 关闭</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='音频状态改变多人连麦）代理）'><span>音频状态改变（多人连麦）（代理）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(void)onAudioStatusDidChange: userId: byTeacher:</span></td><td><span>音频状态改变</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 音频状态改变</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param status 是否可用</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param userId 用户id</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param byTeacher 是否是老师操作</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onAudioStatusDidChange</span>:(<span class="cm-keyword">BOOL</span>)<span class="cm-variable">status</span> <span class="cm-variable">userId</span>:(<span class="cm-variable">NSString</span> <span class="cm-operator">*</span>)<span class="cm-variable">userId</span> <span class="cm-variable">byTeacher</span>:(<span class="cm-keyword">BOOL</span>)<span class="cm-variable">byTeacher</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 132px;"></div><div class="CodeMirror-gutters" style="display: none; height: 132px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>status</span></td><td><span>是否可用</span></td></tr><tr><td><span>userId</span></td><td><span>用户id</span></td></tr><tr><td><span>byTeacher</span></td><td><span>是否是老师操作</span></td></tr></tbody></table></figure><p><font color = '#ff2200'><span> </span><strong><span>注：自己主动操作本地音频状态也会回调此代理</span></strong></font></p><p>&nbsp;</p><h4 id='切换本地摄像头默认前置多人连麦）主动）'><span>切换本地摄像头，默认前置（多人连麦）（主动）</span></h4><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>(BOOL)switchCamera;</span></td><td><span>切换本地摄像头，默认前置</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 切换本地摄像头，默认前置</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @return  是否操作成功</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-keyword">BOOL</span>)<span class="cm-variable">switchCamera</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p>&nbsp;</p><h3 id='连麦异常代理）'><span>连麦异常（代理）</span></h3><figure><table><thead><tr><th><span>方法</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>onConnectionException:</span></td><td><span>异常挂断</span></td></tr></tbody></table></figure><p><span>示例代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="objc"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="objc"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// 异常挂断</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/// @param error 错误原因</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">-</span> (<span class="cm-variable-3">void</span>)<span class="cm-variable">onConnectionException</span>:(<span class="cm-variable">HDSMediaCallError</span>)<span class="cm-variable">error</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><figure><table><thead><tr><th><span>参数</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>HDSMediaCallErrorInCalling</span></td><td><span>连麦失败</span></td></tr><tr><td><span>HDSMediaCallErrorRoomTypeDidChange</span></td><td><span>连麦房间类型改变（需要退出重进）</span></td></tr><tr><td><span>HDSMediaCallErroronMumberLimit</span></td><td><span>连麦人数已达上限</span></td></tr><tr><td><span>HDSMediaCallErrorAbilityDown</span></td><td><span>连麦功能不可用（需要退出重进）</span></td></tr><tr><td><span>HDSMediaCallErrorPullStreamFailed</span></td><td><span>拉流失败</span></td></tr><tr><td><span>HDSMediaCallErrorConnectTimeOut</span></td><td><span>连麦申请超时</span></td></tr></tbody></table></figure><p>&nbsp;</p><h3 id='特别注意多人连麦需要退出房间重新登陆的事件'><font color = '#ff2200'><span>特别注意多人连麦需要退出房间重新登陆的事件</span></font></h3><figure><table><thead><tr><th><span>房间配置事件</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>OnErrorType_LoginFailed</span></td><td><span>登陆失败（需要退出重进）</span></td></tr><tr><td><span>initFailedClosure</span></td><td><span>初始化SDK失败（需要退出重进）</span></td></tr><tr><td><span>OnErrorType_GetPlaySourceFailed</span></td><td><span>获取播放源失败（需要退出重进）</span></td></tr><tr><td><span>OnErrorType_GetSummaryFailed</span></td><td><span>获取摘要失败（需要退出重进）</span></td></tr></tbody></table></figure><figure><table><thead><tr><th><span>连麦事件</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>HDSMeidaCallErrorRoomTypeDidChange</span></td><td><span>连麦房间类型改变（需要退出重进）</span></td></tr><tr><td><span>HDSMeidaCallErrorAbilityDown</span></td><td><span>连麦功能不可用（需要退出重进）</span></td></tr></tbody></table></figure><p>&nbsp;</p></div></div>
+</body>
+</html>

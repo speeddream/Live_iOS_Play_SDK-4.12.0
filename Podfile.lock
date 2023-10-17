@@ -1,0 +1,159 @@
+PODS:
+  - AgoraRtcEngine_iOS (3.7.2):
+    - AgoraRtcEngine_iOS/AINS (= 3.7.2)
+    - AgoraRtcEngine_iOS/AV1Dec (= 3.7.2)
+    - AgoraRtcEngine_iOS/ContentInspect (= 3.7.2)
+    - AgoraRtcEngine_iOS/FullAudioFormat (= 3.7.2)
+    - AgoraRtcEngine_iOS/ReplayKit (= 3.7.2)
+    - AgoraRtcEngine_iOS/ROIEnc (= 3.7.2)
+    - AgoraRtcEngine_iOS/RtcBasic (= 3.7.2)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 3.7.2)
+    - AgoraRtcEngine_iOS/SuperResolution (= 3.7.2)
+    - AgoraRtcEngine_iOS/VideoPreprocess (= 3.7.2)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 3.7.2)
+  - AgoraRtcEngine_iOS/AINS (3.7.2)
+  - AgoraRtcEngine_iOS/AV1Dec (3.7.2)
+  - AgoraRtcEngine_iOS/ContentInspect (3.7.2)
+  - AgoraRtcEngine_iOS/FullAudioFormat (3.7.2)
+  - AgoraRtcEngine_iOS/ReplayKit (3.7.2)
+  - AgoraRtcEngine_iOS/ROIEnc (3.7.2)
+  - AgoraRtcEngine_iOS/RtcBasic (3.7.2)
+  - AgoraRtcEngine_iOS/SpatialAudio (3.7.2)
+  - AgoraRtcEngine_iOS/SuperResolution (3.7.2)
+  - AgoraRtcEngine_iOS/VideoPreprocess (3.7.2)
+  - AgoraRtcEngine_iOS/VirtualBackground (3.7.2)
+  - AliyunOSSiOS (2.10.18)
+  - Bugly (2.5.93)
+  - CCLivePlaySDK (4.12.0):
+    - HDBaseUtils
+  - HDBaseUtils (1.2.3)
+  - HDSAliyunPlayer (4.9.0)
+  - HDSCocoaLumberjack (4.9.0)
+  - HDSGiftModule (4.9.0)
+  - HDSInteractionEngine (4.9.0)
+  - HDSInvitationCardModule (4.9.0)
+  - HDSLikeModule (4.9.0)
+  - HDSLiveStoreModule (4.9.0)
+  - HDSQuestionnaireModule (4.9.0)
+  - HDSRedEnvelopeModule (4.9.0)
+  - HDSSZip (6.9.6)
+  - HDStreamLib (6.22.0)
+  - HDSVoteModule (4.9.0)
+  - HDVideoClass_BSDK (6.32.4):
+    - HDBaseUtils
+  - LookinServer (1.1.7):
+    - LookinServer/Core (= 1.1.7)
+  - LookinServer/Core (1.1.7)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.4.1)
+  - MJRefresh (3.7.5)
+  - SDWebImage (5.14.2):
+    - SDWebImage/Core (= 5.14.2)
+  - SDWebImage/Core (5.14.2)
+  - SnapKit (5.6.0)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AgoraRtcEngine_iOS (= 3.7.2)
+  - AliyunOSSiOS
+  - Bugly
+  - CCLivePlaySDK (= 4.12.0)
+  - HDSAliyunPlayer
+  - HDSCocoaLumberjack
+  - HDSGiftModule (= 4.9.0)
+  - HDSInteractionEngine (= 4.9.0)
+  - HDSInvitationCardModule (= 4.9.0)
+  - HDSLikeModule (= 4.9.0)
+  - HDSLiveStoreModule (= 4.9.0)
+  - HDSQuestionnaireModule (= 4.9.0)
+  - HDSRedEnvelopeModule (= 4.9.0)
+  - HDSSZip
+  - HDStreamLib
+  - HDSVoteModule (= 4.9.0)
+  - HDVideoClass_BSDK (= 6.32.4)
+  - LookinServer
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - SDWebImage (= 5.14.2)
+  - SnapKit
+  - YYCache
+  - YYImage
+  - YYText
+  - YYWebImage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AgoraRtcEngine_iOS
+    - AliyunOSSiOS
+    - Bugly
+    - CCLivePlaySDK
+    - HDBaseUtils
+    - HDSAliyunPlayer
+    - HDSCocoaLumberjack
+    - HDSGiftModule
+    - HDSInteractionEngine
+    - HDSInvitationCardModule
+    - HDSLikeModule
+    - HDSLiveStoreModule
+    - HDSQuestionnaireModule
+    - HDSRedEnvelopeModule
+    - HDSSZip
+    - HDStreamLib
+    - HDSVoteModule
+    - HDVideoClass_BSDK
+    - LookinServer
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
+    - SnapKit
+    - YYCache
+    - YYImage
+    - YYText
+    - YYWebImage
+
+SPEC CHECKSUMS:
+  AgoraRtcEngine_iOS: 35387cd8e2131e1e3c3ac6c196818072ad0b9b75
+  AliyunOSSiOS: e683c1b1faa0657b5cd02de733628cf996f4cd93
+  Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
+  CCLivePlaySDK: 0f63e9821ada81fbc99cce1416a29a8cb0cd3d19
+  HDBaseUtils: 2036a86c76b6423d99c32692abbd96246b17a7ff
+  HDSAliyunPlayer: 697d6588cae7bd84b75a2d218d502137e27bebde
+  HDSCocoaLumberjack: 2a0d4566b8adffce67a24329c831a669e98edf4d
+  HDSGiftModule: 58f41af5722be62cdadddbc26a3990f86abe54ce
+  HDSInteractionEngine: 14943b68faf01688ae0e04428bbd916b2c2d02ab
+  HDSInvitationCardModule: 6e30a061c0732b235bae11d461549fbbd043558b
+  HDSLikeModule: 0b7def6b0e250cc5995ae5e040f7b6358be9618c
+  HDSLiveStoreModule: ac849517736c97ab29b8bfc47c162cc894488e7a
+  HDSQuestionnaireModule: 087898a8c8f15895af397b3d8ac79ef603b58035
+  HDSRedEnvelopeModule: 943d77c8bc113f981a00bf9966f5123e9f44cbb2
+  HDSSZip: 363b8097c845ff59d0cd09c8e84360a8a591bffc
+  HDStreamLib: 8d19636a3bfc58f1d5b4b3e06240d1f6dba14a51
+  HDSVoteModule: 33d94bb6c419651ddce6ebcd97a1d92de85d886e
+  HDVideoClass_BSDK: dd3a530d546654b63ce13084af7865c30505669b
+  LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: 842d11ae1487c3034f12914e77841a78bcb5c6d4
+
+COCOAPODS: 1.12.1
