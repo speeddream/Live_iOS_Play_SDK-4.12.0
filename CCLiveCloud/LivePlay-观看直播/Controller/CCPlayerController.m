@@ -413,9 +413,6 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    /// remove view in appdelegate.window
-    id ap = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [ap removeViewFuncView];
 }
 
 - (void)getDocAspectRatioOfWidth:(CGFloat)width height:(CGFloat)height {
@@ -2609,12 +2606,11 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
     }
     [self.view endEditing:YES];
     [APPDelegate.window endEditing:YES];
-    //初始化随堂测视图
+    // 初始化随堂测视图
     CCClassTestView *testView = [[CCClassTestView alloc] initWithTestDic:_testDict isScreenLandScape:self.screenLandScape];
     testView.tag = 1005;
-    id ap = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [ap addFuncView:testView];
     self.testView = testView;
+    [APPDelegate.window addSubview:self.testView];
     WS(weakSelf)
     self.testView.CommitBlock = ^(NSArray * _Nonnull arr) {//提交答案回调
        [weakSelf.requestData commitPracticeWithPracticeId:_testDict[@"practice"][@"id"] options:arr];
@@ -2693,12 +2689,13 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
  */
 - (void)practiceCloseWithDic:(NSDictionary *) resultDic {
     [self updateTestWithStatus:YES];
-    //移除随堂测视图
-//    [_testView removeFromSuperview];
-    id ap = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [ap removeViewFuncView];
-    _testView = nil;
+    // 移除随堂测视图
+    if (self.testView) {
+        [self.testView removeFromSuperview];
+        self.testView = nil;
+    }
 }
+
 /**
  *    @brief    收到奖杯(The new method)
  *    dic       结果

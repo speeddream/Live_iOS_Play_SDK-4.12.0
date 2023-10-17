@@ -75,8 +75,9 @@
 #import "CCcommonDefine.h"
 
 @interface AppDelegate ()
-@property (nonatomic, strong) UIView *funcView;
+
 @property (nonatomic, strong) Reachability *hostReachability;
+
 @property (nonatomic, strong) Reachability *interNetReachability;
 @end
 
@@ -254,29 +255,6 @@
             SaveToUserDefaults(WATCH_PASSWORD,viewertoken);
         }
     }
-}
-
-- (void)addFuncView:(UIView *)view {
-    if ([self checkVisiable]) {
-        self.funcView = view;
-        [self.window addSubview:view];
-    }
-}
-
-- (void)removeViewFuncView {
-    [self.funcView removeFromSuperview];
-}
-
-/// check current in ccplayview
-- (BOOL)checkVisiable {
-    UIViewController *vc = self.window.rootViewController;
-    if ([vc isKindOfClass:[UINavigationController class]]) {
-        UIViewController *tmp = [((UINavigationController *)vc).viewControllers lastObject];
-        if ([tmp presentedViewController]) {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 // MARK: - 网络状态监听

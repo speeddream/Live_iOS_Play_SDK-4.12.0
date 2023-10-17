@@ -11,10 +11,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-- (void)addFuncView:(UIView *)view;
-- (void)removeViewFuncView;
-/// 4.5.1 new
+ 
 @property (nonatomic, assign, getter=isLaunchScreen) BOOL launchScreen;    /**< 是否是横屏 */
 
 @end
