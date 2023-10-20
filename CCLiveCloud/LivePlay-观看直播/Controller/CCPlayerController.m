@@ -28,8 +28,7 @@
 #import "CCClassTestView.h"//随堂测
 #import "CCCupView.h"//奖杯
 #import "CCPunchView.h"
-/// 4.5.1 new
-#import "AppDelegate.h"
+
 /// 3.17.3 new
 #import "HDSSupportView.h"
 #import "Reachability.h"

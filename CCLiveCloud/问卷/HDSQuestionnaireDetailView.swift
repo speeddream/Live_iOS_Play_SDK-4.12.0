@@ -36,12 +36,12 @@ class HDSQuestionnaireDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubview()
-        yyhcb_addKeyboardCorverNotification()
-        yyhcb_addKeyboardCorverGesture()
+//        yyhcb_addKeyboardCorverNotification()
+//        yyhcb_addKeyboardCorverGesture()
     }
     deinit {
-        yyhcb_removeKeyboardCorverNotification()
-        yyhcb_removeKeyboardCorverGesture()
+//        yyhcb_removeKeyboardCorverNotification()
+//        yyhcb_removeKeyboardCorverGesture()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -112,7 +112,7 @@
 /// 4.5.1 new
 - (void)setLaunchScreen:(BOOL)launchScreen {
     _launchScreen = launchScreen;
-    [self application:[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:nil];
+//    [self application:[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:nil];
 }
 /// 4.5.1 new
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {

@@ -139,7 +139,6 @@
 		52275E2921ED7C0400C265D7 /* CCInteractionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52275E2821ED7C0400C265D7 /* CCInteractionView.m */; };
 		522A753221CB78F300C871B2 /* UIButton+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 522A753021CB78F300C871B2 /* UIButton+UserInfo.m */; };
 		522A753321CB78F300C871B2 /* UITextView+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 522A753121CB78F300C871B2 /* UITextView+UserInfo.m */; };
-		522A764621D3216D00C871B2 /* SelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522A764421D3216D00C871B2 /* SelectMenuView.m */; };
 		522A764F21D321BA00C871B2 /* RollcallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522A764D21D321B900C871B2 /* RollcallView.m */; };
 		522A766321D4A4D200C871B2 /* LianmaiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522A766221D4A4D200C871B2 /* LianmaiView.m */; };
 		522F4EE7217D612D001B078F /* CCPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522F4EE6217D612D001B078F /* CCPlayerController.m */; };
@@ -231,6 +230,7 @@
 		70EE249C222396A300F19560 /* CCProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE249B222396A300F19560 /* CCProxy.m */; };
 		70EE24A0222413BA00F19560 /* CCClassTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE249F222413BA00F19560 /* CCClassTestView.m */; };
 		70EE24A32224E7B300F19560 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EE24A22224E7B300F19560 /* TopView.m */; };
+		81D343812ADEC4DF003DBBEB /* SelectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7058893021D0AC460046A03B /* SelectMenuView.m */; };
 		A506469A26E5BC5200735E2E /* HDSLiveBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A506469926E5BC5200735E2E /* HDSLiveBaseView.m */; };
 		A5167B8B29C32C7500BC6290 /* HDSQuestionFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5167B8A29C32C7500BC6290 /* HDSQuestionFooterCell.m */; };
 		A533708729D5A7D2004B4EF5 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = A533708629D5A7D2004B4EF5 /* UIImage+animatedGIF.m */; };
@@ -627,8 +627,6 @@
 		522A752F21CB78F300C871B2 /* UITextView+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+UserInfo.h"; sourceTree = "<group>"; };
 		522A753021CB78F300C871B2 /* UIButton+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+UserInfo.m"; sourceTree = "<group>"; };
 		522A753121CB78F300C871B2 /* UITextView+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+UserInfo.m"; sourceTree = "<group>"; };
-		522A764421D3216D00C871B2 /* SelectMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectMenuView.m; sourceTree = "<group>"; };
-		522A764521D3216D00C871B2 /* SelectMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMenuView.h; sourceTree = "<group>"; };
 		522A764D21D321B900C871B2 /* RollcallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollcallView.m; sourceTree = "<group>"; };
 		522A764E21D321BA00C871B2 /* RollcallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollcallView.h; sourceTree = "<group>"; };
 		522A766121D4A4D200C871B2 /* LianmaiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmaiView.h; sourceTree = "<group>"; };
@@ -1509,17 +1507,10 @@
 				5287D2AE217EC0ED0030AFB6 /* CCcommonDefine.h */,
 				A54B8B8F2A3FFF4F0031ADA9 /* HDSLoginErrorManager.h */,
 				A54B8B902A3FFF4F0031ADA9 /* HDSLoginErrorManager.m */,
+				A5A89E5C296AC13700BA1B87 /* HDSSafeArray.h */,
+				A5A89E59296AC13700BA1B87 /* HDSSafeArray.m */,
 			);
 			path = BASE;
-			sourceTree = "<group>";
-		};
-		522A764321D3216D00C871B2 /* Menu-菜单 */ = {
-			isa = PBXGroup;
-			children = (
-				522A764421D3216D00C871B2 /* SelectMenuView.m */,
-				522A764521D3216D00C871B2 /* SelectMenuView.h */,
-			);
-			path = "Menu-菜单";
 			sourceTree = "<group>";
 		};
 		529D53752179750B0093F724 = {
@@ -1556,7 +1547,6 @@
 				A55849AE296EC52C00CBFCAF /* LiveTopChat-聊天置顶 */,
 				52F8BBD922311DF700B7CC1B /* LotteryDraw-抽奖 */,
 				70EE249D2224136E00F19560 /* ClassTest-随堂测 */,
-				522A764321D3216D00C871B2 /* Menu-菜单 */,
 				529D53B521797CB10093F724 /* 二维码扫描 */,
 				529D53B421797CB10093F724 /* Announcement-公告 */,
 				4B3D61E8236BDBF60053AC52 /* Punch-打卡 */,
@@ -2300,8 +2290,6 @@
 		A5A89E58296AC13700BA1B87 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				A5A89E5C296AC13700BA1B87 /* HDSSafeArray.h */,
-				A5A89E59296AC13700BA1B87 /* HDSSafeArray.m */,
 				A5A89E5D296AC13700BA1B87 /* HDSChatDataEngine.h */,
 				A5A89E5B296AC13700BA1B87 /* HDSChatDataEngine.m */,
 				A5A89E5A296AC13700BA1B87 /* HDSChatDataModel.h */,
@@ -2658,6 +2646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D343812ADEC4DF003DBBEB /* SelectMenuView.m in Sources */,
 				5286A67621916B0C00912BC2 /* CCQuestionView.m in Sources */,
 				A5C7593129BAFF0000FF00F2 /* UIControl+EnlargeTouchArea.m in Sources */,
 				A5A89E5F296AC13800BA1B87 /* HDSLiveStreamLoginController.m in Sources */,
@@ -2791,7 +2780,6 @@
 				7017513621C8ED0600558FA2 /* QuestionNaire.m in Sources */,
 				184703CA24BC63DE0096686C /* NSURLSession+CCCorrectedResumeData.m in Sources */,
 				A583657D26DB9DAF00C841CC /* HDSMultiMediaCallBar.m in Sources */,
-				522A764621D3216D00C871B2 /* SelectMenuView.m in Sources */,
 				A5A89E65296AC13800BA1B87 /* HDSLiveChatView.m in Sources */,
 				18AD8BC324A9AD1F00735ABB /* CCButton.m in Sources */,
 				A55849A7296E8F0800CBFCAF /* HDSStreamLineAndQualityView.m in Sources */,
