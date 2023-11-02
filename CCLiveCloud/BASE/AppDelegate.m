@@ -115,12 +115,12 @@
 //    [self application:[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:nil];
 }
 /// 4.5.1 new
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-    if (self.isLaunchScreen) {
-        return UIInterfaceOrientationMaskLandscapeRight;
-    }
-    return UIInterfaceOrientationMaskPortrait;
-}
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//    if (self.isLaunchScreen) {
+//        return UIInterfaceOrientationMaskLandscapeRight;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

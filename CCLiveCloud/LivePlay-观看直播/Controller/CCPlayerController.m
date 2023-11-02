@@ -4355,16 +4355,20 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
         }
         #pragma clang diagnostic pop
     } else {
-        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-            SEL selector  = NSSelectorFromString(@"setOrientation:");
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-            [invocation setSelector:selector];
-            [invocation setTarget:[UIDevice currentDevice]];
-            int val = orientation;
-            // 从2开始是因为0 1 两个参数已经被selector和target占用
-            [invocation setArgument:&val atIndex:2];
-            [invocation invoke];
-        }
+        UIDeviceOrientation orientation = isLaunchScreen ? UIDeviceOrientationLandscapeLeft : UIDeviceOrientationPortrait;
+        [[UIDevice currentDevice] setValue:@(UIDeviceOrientationUnknown) forKeyPath:@"orientation"];
+        [[UIDevice currentDevice] setValue:@(orientation) forKeyPath:@"orientation"];
+        [UIViewController attemptRotationToDeviceOrientation];
+//        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//            SEL selector  = NSSelectorFromString(@"setOrientation:");
+//            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+//            [invocation setSelector:selector];
+//            [invocation setTarget:[UIDevice currentDevice]];
+//            int val = orientation;
+//            // 从2开始是因为0 1 两个参数已经被selector和target占用
+//            [invocation setArgument:&val atIndex:2];
+//            [invocation invoke];
+//        }
     }
 }
 
@@ -4377,7 +4381,7 @@ UIScrollViewDelegate,UITextFieldDelegate,CCPlayerViewDelegate>
 /// 4.5.1 new
 - (void)updateSubViewConstraints:(BOOL)isLaunchScreen {
     WS(ws)
-    if (isLaunchScreen == YES) {
+    if (isLaunchScreen) {
         [self.playerView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self.view);
         }];

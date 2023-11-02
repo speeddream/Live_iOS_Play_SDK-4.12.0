@@ -83,8 +83,8 @@
     [super viewDidAppear:animated];
     
     self.textFieldUserId.text = @"5BD067B602DE357D";
-    self.textFieldRoomId.text = @"BDD09441DC2974589C33DC5901307461";
-    self.textFieldUserPassword.text = @"1198188947135180800";
+    self.textFieldRoomId.text = @"F66286F3A277B2E69C33DC5901307461";
+    self.textFieldUserPassword.text = @"1198324798280347648";
     self.textFieldUserName.text = @"xkw_317427709";
 }
 
